@@ -61,9 +61,10 @@ nav:
     - remove-descriptions command: 'preprocessor/remove_descriptions.md'
     - edit-segment-annotations command: 'preprocessor/edit_segment_annotations.md'
     - edit-descriptions command: 'preprocessor/edit_descriptions.md'
-    # - Preprocessor: preprocessor.md
+  # - Preprocessor: preprocessor.md
     # - Server: server.md
-    # - Volumes & Segmentations Toolkit: vs_toolkit.md
+  - Volumes & Segmentations Toolkit documentation:
+   - Volumes & Segmentations Toolkit overview: 'vs_toolkit/overview.md'
 
   # - Plugin:
   #   - Creating Instance: 'plugin/instance.md'

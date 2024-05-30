@@ -1,19 +1,20 @@
-# VS Toolkit
-
 # Usage
 ## Quick start
-To run the query app tool and produce the static files suitable for visualization at the frontend:
-1. Build the database using preprocessor **(TODO LINK TO README FOR PREPROCESSOR)**
+To run the Volumes & Segmentations toolkit and produce the static files suitable for visualization at the frontend:
+
+1. Build the internal database by adding desired entries using preprocessor (see [Documentation for preprocess command of Preprocessor](../preprocessor/preprocess.md) and [examples on how to add entries to the internal database](../preprocessor/preprocess#examples-of-using-preprocess-command-in-mode-add.md)) 
 
 2. From repository root (`cellstar-volume-server-v2` by default) run:
-    ```
+```shell
     python --db_path PATH_TO_DB --out OUTPUT_FILE --json-params-path PATH_TO_JSON_WITH_PARAMETERS
-    ```
+```
+<!-- TODO: move here text from the paper -->
 ## Arguments description
-- `--db_path` - path to the database built using preprocessor
-- `--out` - path to the output file where the results of the query will be stored
-
-- `--json-params-path` Path to `.json` file with query parameters (see table below)
+| Argument | Description |
+| -------- | ----------- |
+| `--db_path` | The --db_path argument is mandatory and dictates the path to the internal database constructed using the Preprocessor |
+| `--out` | The --out argument is mandatory and specifies the desired name for the output file. This file name must include the mandatory .cvsx extension |
+| `--json-params-path` | The --json-params-path argument is obligatory and defines the path to the JSON file containing the user-specified query parameters (see table below) |
 
 ### Query parameters
 | Parameter         | Description                                                                                                             | Kind      | Type                                        | Default                          |
@@ -42,7 +43,7 @@ First create `json_with_query_params.json` file with the following content:
 
 Then use the following command:
     ```
-    python query_app.py --db_path temp/test_db --out results.cvsx composite --json-params-path json_with_query_params.json
+    python vs_toolkit.py --db_path temp/test_db --out results.cvsx composite --json-params-path json_with_query_params.json
     ```
     
 This will query data for channel `2` and time frame `4` for volume and data for all available segmentation kinds and time frame `4`, and pack it into `idr-13457537.cvsx` file
