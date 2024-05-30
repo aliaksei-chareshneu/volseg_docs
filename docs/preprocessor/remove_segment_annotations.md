@@ -1,4 +1,4 @@
-## remove-segment-annotations
+# remove-segment-annotations
 
 This command allows removing specific segment annotations from an internal database entry. Requires the following arguments:
 

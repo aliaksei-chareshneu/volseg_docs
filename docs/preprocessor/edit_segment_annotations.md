@@ -1,4 +1,4 @@
-## edit-segment-annotations
+# edit-segment-annotations
 This command allows editing segment 
 annotations in `annotations.json` which is a part of an internal database entry. Requires the following arguments:
 
