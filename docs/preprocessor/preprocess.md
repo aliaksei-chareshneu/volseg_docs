@@ -111,7 +111,8 @@ python preprocessor/cellstar_preprocessor/preprocess.py preprocess --mode add --
 
 
 In order to add an `empiar-10988` entry with lattice segmentations based on masks to the internal database, follow the steps below:
-1. Obtain the raw input files
+
+1. Obtain the raw input files:
 
 	Create `test-data/preprocessor/sample_volumes/empiar/empiar-10988` folder, change current directory to it, and download electron density map file. E.g. from the root repository directory (`cellstar-volume-server-v2` by default) run:
 
