@@ -175,6 +175,7 @@ Note that we are setting minimum downsampling level to `4` by using `--min-downs
 
 ### EMPIAR-11756
 In order to add an empiar-11756 entry with geometric segmentation to the internal database, follow the steps below:
+
 1. Obtain the raw input files
 
 	Create `test-data/preprocessor/sample_volumes/empiar/empiar-11756` folder, change current directory to it, and download electron density map file. E.g. from the root repository directory (`cellstar-volume-server-v2` by default) run:
@@ -268,10 +269,11 @@ In order to add an custom-hipsc_230741 entry to the internal database, follow th
     Namely, we need to set voxel size, biologically meaningfull channel IDs for volume data and segmentation IDs for segmentation data, and specify missing OME-TIFF dimenstions. Besides, we can add biologically relavant annotation information (cell stage) that will be rendered in the Mol\* VS 2.0 user interface. 
 
     We can extract the necessary information from [metadata.csv](https://open.quiltdata.com/b/allencell/tree/aics/hipsc_single_cell_image_dataset/metadata.csv) using the following approach:
-     - Voxel size: value of `scale_micron` field (`[0.108333, 0.108333, 0.108333]`) converted to Angstroms (`[1083.33, 1083.33, 1083.33]`)
-     - Biologically meaningful channel IDs: can be obtained from content of `name_dict` field, which corresponds to Python dictionary. We need the value of `crop_raw` key (`['dna', 'membrane', 'structure']`)
-     - Biologically meaningful segmentation IDs: can be obtained from content of `name_dict` field as well. We need the value of `crop_seg` key (` ['dna_segmentation', 'membrane_segmentation', 'membrane_segmentation_roof', 'struct_segmentation', 'struct_segmentation_roof']`)
-     - Missing OME-TIFF dimensions: is not specified anywhere. To obtain this, we will need to open OME-TIFF file using `pyometiff` library that should be installed by default while creating the environment for Mol\* VS 2.0. 
+
+     - **Voxel size**: value of `scale_micron` field (`[0.108333, 0.108333, 0.108333]`) converted to Angstroms (`[1083.33, 1083.33, 1083.33]`)
+     - **Biologically meaningful channel IDs**: can be obtained from content of `name_dict` field, which corresponds to Python dictionary. We need the value of `crop_raw` key (`['dna', 'membrane', 'structure']`)
+     - **Biologically meaningful segmentation IDs**: can be obtained from content of `name_dict` field as well. We need the value of `crop_seg` key (` ['dna_segmentation', 'membrane_segmentation', 'membrane_segmentation_roof', 'struct_segmentation', 'struct_segmentation_roof']`)
+     - **Missing OME-TIFF dimensions**: is not specified anywhere. To obtain this, we will need to open OME-TIFF file using `pyometiff` library that should be installed by default while creating the environment for Mol\* VS 2.0. 
      
         You can run `python preprocessor/cellstar_preprocessor/tools/check_ometiff_dimensions/check_ometiff_dimensions.py` script to check the dimensions of OME-TIFF file:
 
@@ -306,7 +308,7 @@ In order to add an custom-hipsc_230741 entry to the internal database, follow th
         ```
         It is obvious that the number of dimensions (5) does not correspond to array shape. In that case, most likely time dimension (`T`) is missing from the data array.
     
-     - We can add biologically relevant annotation data available in [metadata.csv](https://open.quiltdata.com/b/allencell/tree/aics/hipsc_single_cell_image_dataset/metadata.csv). Namely, the content of `cell_stage` field, which, for that cell ID is `M4M5`. 
+     - **Biologically relevant annotations**: We can add biologically relevant annotation data available in [metadata.csv](https://open.quiltdata.com/b/allencell/tree/aics/hipsc_single_cell_image_dataset/metadata.csv). Namely, the content of `cell_stage` field, which, for that cell ID is `M4M5`. 
 
     Now, when we have obtained all the missing information, create `test-data/preprocessor/sample_segmentations/custom/custom-hipsc_230741/extra_data.json` JSON file with the following content:
     ```json
