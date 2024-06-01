@@ -1,5 +1,5 @@
 # Background
-In order to visualize an internal database entry using local instance of Mol* 3D viewer, you need to host a local instance of server API. Local instance of Mol* 3D viewer then will be able to send dynamic queries to the local instance of server API, and visualize their results.
+In order to visualize an internal database entry using local instance of Mol\* 3D viewer, you need to host a local instance of server API. Local instance of Mol\* 3D viewer then will be able to send dynamic queries to the local instance of server API, and visualize their results.
 
 # Hosting Server API
 Make changes in `server/cellstar_server/app/settings.py` file. `DB_PATH` constant (line `8` in the code block below) should point to the path to your internal database that was built using Preprocessor, e.g.:

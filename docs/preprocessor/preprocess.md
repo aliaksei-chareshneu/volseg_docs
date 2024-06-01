@@ -196,7 +196,7 @@ In order to add an empiar-11756 entry with geometric segmentation to the interna
 
 2. Prepare input files.
 
-	This EMPIAR entry contains relevant data that can be used to render geometric segmentation in `.star` format. To be able to use this data, .star files need to be parsed into the standard Mol* VS 2.0 format for geometric segmentations. This can be achieved by using custom script `preprocessor/cellstar_preprocessor/tools/parse_star_file/parse_single_star_file.py` that is part of our solution. In parallel, this script allows to set the biologically meaningful segmentation IDs for both geometric segmentations based on the data from EMPIAR entry webpage (i.e. `ribosomes` and `nucleosomes`). In order to parse both `.star` files, from the root repository directory (`cellstar-volume-server-v2` by default) run:
+	This EMPIAR entry contains relevant data that can be used to render geometric segmentation in `.star` format. To be able to use this data, .star files need to be parsed into the standard Mol\* VS 2.0 format for geometric segmentations. This can be achieved by using custom script `preprocessor/cellstar_preprocessor/tools/parse_star_file/parse_single_star_file.py` that is part of our solution. In parallel, this script allows to set the biologically meaningful segmentation IDs for both geometric segmentations based on the data from EMPIAR entry webpage (i.e. `ribosomes` and `nucleosomes`). In order to parse both `.star` files, from the root repository directory (`cellstar-volume-server-v2` by default) run:
 
     ```shell
     python preprocessor/cellstar_preprocessor/tools/parse_star_file/parse_single_star_file.py --star_file_path test-data/preprocessor/sample_segmentations/empiar/empiar-11756/rln_ribosome_bin1_tomo_649.star --geometric_segmentation_input_file_path test-data/preprocessor/sample_segmentations/empiar/empiar-11756/geometric_segmentation_input_1.json --sphere_radius 100 --segmentation_id ribosomes  --sphere_color_hex FFFF00 --pixel_size 7.84 --star_file_coordinate_divisor 4
@@ -264,13 +264,13 @@ In order to add an custom-hipsc_230741 entry to the internal database, follow th
 2. Prepare addtional input files.
     
     OMETIFF input files with volume and segmentation data contains incomplete information for preprocessing and subsequent rendering. To alleviate this, one can create JSON file with extra data, based on the content of [metadata.csv](https://open.quiltdata.com/b/allencell/tree/aics/hipsc_single_cell_image_dataset/metadata.csv).
-    Namely, we need to set voxel size, biologically meaningfull channel IDs for volume data and segmentation IDs for segmentation data, and specify missing OME-TIFF dimenstions. Besides, we can add biologically relavant annotation information (cell stage) that will be rendered in the Mol* VS 2.0 user interface. 
+    Namely, we need to set voxel size, biologically meaningfull channel IDs for volume data and segmentation IDs for segmentation data, and specify missing OME-TIFF dimenstions. Besides, we can add biologically relavant annotation information (cell stage) that will be rendered in the Mol\* VS 2.0 user interface. 
 
     We can extract the necessary information from [metadata.csv](https://open.quiltdata.com/b/allencell/tree/aics/hipsc_single_cell_image_dataset/metadata.csv) using the following approach:
      - Voxel size: value of `scale_micron` field (`[0.108333, 0.108333, 0.108333]`) converted to Angstroms (`[1083.33, 1083.33, 1083.33]`)
      - Biologically meaningful channel IDs: can be obtained from content of `name_dict` field, which corresponds to Python dictionary. We need the value of `crop_raw` key (`['dna', 'membrane', 'structure']`)
      - Biologically meaningful segmentation IDs: can be obtained from content of `name_dict` field as well. We need the value of `crop_seg` key (` ['dna_segmentation', 'membrane_segmentation', 'membrane_segmentation_roof', 'struct_segmentation', 'struct_segmentation_roof']`)
-     - Missing OME-TIFF dimensions: is not specified anywhere. To obtain this, we will need to open OME-TIFF file using `pyometiff` library that should be installed by default while creating the environment for Mol* VS 2.0. 
+     - Missing OME-TIFF dimensions: is not specified anywhere. To obtain this, we will need to open OME-TIFF file using `pyometiff` library that should be installed by default while creating the environment for Mol\* VS 2.0. 
      
         You can run `python preprocessor/cellstar_preprocessor/tools/check_ometiff_dimensions/check_ometiff_dimensions.py` script to check the dimensions of OME-TIFF file:
 

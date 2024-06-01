@@ -39,15 +39,6 @@ markdown_extensions:
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-# nav:
-# # webpage for preprocessor
-# # webpage for query tool
-# # webpage for server?
-#   - Home: index.md
-#   # - About: about.md
-#   - Preprocessor: preprocessor.md
-#   - Server: server.md
-#   - Volumes & Segmentations Toolkit: vs_toolkit.md
 
 nav:
   - 'index.md'
@@ -61,36 +52,9 @@ nav:
     - remove-descriptions command: 'preprocessor/remove_descriptions.md'
     - edit-segment-annotations command: 'preprocessor/edit_segment_annotations.md'
     - edit-descriptions command: 'preprocessor/edit_descriptions.md'
-  # - Preprocessor: preprocessor.md
-    # - Server: server.md
   - Volumes & Segmentations Toolkit documentation:
-   - Volumes & Segmentations Toolkit overview: 'vs_toolkit/overview.md'
+    - Using Volumes & Segmentations Toolkit: 'vs_toolkit/overview.md'
+  - Volumes & Segmentations Server API documentation:
+    - Hosting Server API: 'server_api/overview.md'
 
-  # - Plugin:
-  #   - Creating Instance: 'plugin/instance.md'
-  #   - Examples: plugin/examples.md
-  #   - Selections: 'plugin/selections.md'
-  #   - Viewer State: 'plugin/viewer-state.md'
-  #   - Data State: 'plugin/data-state.md'
-  #   - File Formats: 'plugin/file-formats.md'
-  #   - CIF Schemas: 'plugin/cif-schemas.md'
-  #   - State Transforms:
-  #     - Custom Trajectory: 'plugin/transforms/custom-trajectory.md'
-  # - Data Access Tools:
-  #   - 'data-access-tools/model-server.md'
-  #   - Volume Server:
-  #     - Overview: 'data-access-tools/volume-server/index.md'
-  #     - Examples: 'data-access-tools/volume-server/examples.md'
-  #     - How it Works: 'data-access-tools/volume-server/how-it-works.md'
-  #     - Data Format: 'data-access-tools/volume-server/response-data-format.md'
-  #   - 'data-access-tools/plugin-state-server.md'
-  #   - 'data-access-tools/convert-to-bcif.md'
-  #   - 'data-access-tools/create-ccd-table.md'
-  #   - 'data-access-tools/extract-ccd-ions.md'
-  # - Extensions:
-  #   - MolViewSpec: 'extensions/mvs/index.md'
-  #   - wwPDB StructConn: 'extensions/struct-conn.md'
-  #   - Tunnels: 'extensions/tunnels.md'
-  # - Misc:
-  #   - Interesting PDB entries: misc/interesting-pdb-entries.md
 repo_url: https://github.com/molstar/docs
