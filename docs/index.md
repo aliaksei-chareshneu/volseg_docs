@@ -1,17 +1,28 @@
-# Welcome to MkDocs
+This page explains how to install Mol\* Volumes & Segmentations 2.0
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+# Install the server
+To install the server, clone the Github repository and change current directory to the root repository directory (`cellstar-volume-server-v2` by default):
 
-## Commands
+<!-- TODO: update repo link to volseg -->
+```shell
+git clone https://github.com/aliaksei-chareshneu/cellstar-volume-server-v2.git
+cd cellstar-volume-server-v2
+```
+# Set up and activate the environment
+Set up the environment using either Conda:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+```shell
+conda env create -f environment.yaml
+```
 
-## Project layout
+or Mamba:
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+```shell
+mamba env create -f environment.yaml
+```
+
+Activate the created environment:
+
+```shell
+conda activate cellstar-volume-server-3.10
+```
