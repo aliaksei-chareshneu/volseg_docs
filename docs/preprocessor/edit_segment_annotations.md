@@ -7,8 +7,9 @@ annotations in `annotations.json` which is a part of an internal database entry.
 | `--entry_id` (string) | entry ID in internal database, corresponding to the entry folder name (e.g. `emd-1832`) |
 | `--source_db` (string) | source database, corresponding to the source database folder name in internal database (e.g. `emdb`)|
 | `--db_path` (string) | specifies the path to the internal database |
-| `--data_json_path` (string) | specifies path to JSON file with segment annotations. This file represents a list of objects, each of which follow a specific data model (see Figure 10, `annotations` field). An example of such file is provided below:
+| `--data_json_path` (string) | specifies path to JSON file with segment annotations. This file represents a list of objects, each of which follow a specific data model (see diagram below, `annotations` field). An example of such file is provided under the schema. |
 
+[![](annotations_metadata_schema.jpg)](annotations_metadata_schema.jpg)
 ```json
 [
     {
@@ -39,4 +40,4 @@ annotations in `annotations.json` which is a part of an internal database entry.
     }
 ]
 ```
-|
+

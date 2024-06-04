@@ -6,7 +6,9 @@ This command allows editing (adding or modifying) descriptions in `annotations.j
 | `--entry_id` (string) | entry ID in internal database, corresponding to the entry folder name (e.g. `emd-1832`) |
 | `--source_db` (string) | source database, corresponding to the source database folder name in internal database (e.g. `emdb`)|
 | `--db_path` (string) | specifies the path to the internal database |
-| `--data_json_path` (string) | specifies path to JSON file with descriptions. This file represents a list of objects, each of which follow a specific data model (see Figure 11). An example of such file is provided below: |
+| `--data_json_path` (string) | specifies path to JSON file with descriptions. This file represents a list of objects, each of which follow a specific data model (see diagram below). An example of such file is provided under the schema. |
+
+[![](description_schema.jpg)](description_schema.jpg)
 
 <!-- TODO: insert scheme with data model  -->
 ```shell
