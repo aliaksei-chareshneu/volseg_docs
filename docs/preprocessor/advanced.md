@@ -66,11 +66,12 @@ Note that all fields within the extra data section are designated as optional. B
 
 The following excerpt showcases a sample structure for a JSON file containing extra data, specifically designed for the aforementioned use case of overriding voxel size information:
 
-This section presents another illustrative example pertaining to the preprocessing workflow for the EMPIAR-10988 entry. A detailed tutorial outlining this process can be found online at[ https://github.com/aliaksei-chareshneu/molstar-volseg/blob/main/readme_new_preprocessor.md#empiar-10988](https://github.com/aliaksei-chareshneu/cellstar-volume-server-v2/blob/main/readme_new_preprocessor.md#empiar-10988).
+This section presents another illustrative example pertaining to the preprocessing workflow for the `EMPIAR-10988` entry. A detailed tutorial outlining this process can be found at [https://github.com/aliaksei-chareshneu/molstar-volseg/blob/main/readme_new_preprocessor.md#empiar-10988](https://github.com/aliaksei-chareshneu/cellstar-volume-server-v2/blob/main/readme_new_preprocessor.md#empiar-10988).
 
-In this particular case, the purpose of using extra data is to modify the segment identifications automatically assigned by the Preprocessor during the analysis of electron density mask files. These files typically contain generic values like "1" or "2". The advanced preprocessing functionality with extra data allows users to replace these generic labels with more biologically relevant segment IDs, such as "cytoplasm" or "mitochondria".
+In this particular case, the purpose of using extra data is to modify the segment identifications automatically assigned by the Preprocessor during the analysis of electron density mask files. Grid data in these files typically consists of integer values, e.g. `1` or `2`. As the Preprocessor automatically uses these values as segment IDs, this translates to generic segment names, such as `Segment 1`, `Segment 2` etc. While it is possible to manually edit this via `Annotation Editor`, we offer an advanced option that allows the user to achieve the same result with the help of extra data functionality. It allows users to easily replace these with more biologically relevant segment IDs, such as `cytoplasm` or `mitochondria` via providing a JSON file following specific format as the first input file to the Preprocessor.
 
 The following code snippet illustrates a possible configuration for the extra data JSON file, specifically designed to achieve the aforementioned customization of segment IDs for the EMPIAR-10988 entry:
+
 
 ```json
 {
