@@ -52,6 +52,7 @@ nav:
     - remove-descriptions command: 'preprocessor/remove_descriptions.md'
     - edit-segment-annotations command: 'preprocessor/edit_segment_annotations.md'
     - edit-descriptions command: 'preprocessor/edit_descriptions.md'
+    - Advanced parameters: 'preprocessor/advanced.md'
   - Volumes & Segmentations Toolkit documentation:
     - Using Volumes & Segmentations Toolkit: 'vs_toolkit/overview.md'
   - Volumes & Segmentations Server API documentation:
